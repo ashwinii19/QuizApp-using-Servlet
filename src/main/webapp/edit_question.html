@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Question</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f6fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            width: 450px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #444;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 12px;
+            color: #333;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        button {
+            margin-top: 18px;
+            width: 100%;
+            padding: 12px;
+            background: #4CAF50;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Edit Question</h2>
+    <form action="EditQuestionServlet" method="post">
+        <!-- Hidden ID -->
+        <input type="hidden" name="question_id" id="question_id" value="">
+
+        <label for="question_text">Question</label>
+        <input type="text" name="question_text" id="question_text" required>
+
+        <label for="option_a">Option A</label>
+        <input type="text" name="option_a" id="option_a" required>
+
+        <label for="option_b">Option B</label>
+        <input type="text" name="option_b" id="option_b" required>
+
+        <label for="option_c">Option C</label>
+        <input type="text" name="option_c" id="option_c" required>
+
+        <label for="option_d">Option D</label>
+        <input type="text" name="option_d" id="option_d" required>
+
+        <label for="correct_option">Correct Option</label>
+        <select name="correct_option" id="correct_option" required>
+            <option value="">-- Select Correct Option --</option>
+            <option value="A">Option A</option>
+            <option value="B">Option B</option>
+            <option value="C">Option C</option>
+            <option value="D">Option D</option>
+        </select>
+
+        <label for="section">Section</label>
+        <input type="text" name="section" id="section" required>
+
+        <button type="submit">Update Question</button>
+    </form>
+</div>
+</body>
+</html>

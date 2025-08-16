@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Question</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; 
+            padding: 50px 0; 
+        }
+
+        .container {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 400px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .container h2 {
+            margin-bottom: 25px;
+            font-size: 26px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .container input[type="text"],
+        .container select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 30px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .container input:focus,
+        .container select:focus {
+            border-color: #2575fc;
+            outline: none;
+        }
+
+        .container button {
+            width: 100%;
+            padding: 14px;
+            background: #2575fc;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .container button:hover {
+            background: #1b5fd3;
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .container a.back-link {
+            color: #ff9800;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .container a.back-link:hover {
+            text-decoration: underline;
+        }
+
+        label {
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Add New Question</h2>
+
+        <form action="AddQuestionServlet" method="post">
+            <input type="text" name="question_text" placeholder="Enter Question" required><br>
+
+            <input type="text" name="option_a" placeholder="Option A" required><br>
+            <input type="text" name="option_b" placeholder="Option B" required><br>
+            <input type="text" name="option_c" placeholder="Option C" required><br>
+            <input type="text" name="option_d" placeholder="Option D" required><br>
+
+			<input type="text" name="correct_option" placeholder="Correct Option (A/B/C/D)" maxlength="1"  pattern="[ABCDabcd]" title="Please enter only A, B, C, or D" required>
+	
+
+            <label for="section">Select Section:</label><br>
+            <select name="section" id="section" required>
+                <option value="" disabled selected>Select Section</option>
+                <option value="Java">Java</option>
+                <option value="SQL">SQL</option>
+                <option value="Servlet">Servlet</option>
+                <option value="General Knowledge">General Knowledge</option>
+            </select><br><br>
+
+            <button type="submit">Add Question</button>
+        </form>
+
+        <p><a href="admin_dashboard.html" class="back-link">Back to Dashboard</a></p>
+    </div>
+</body>
+</html>

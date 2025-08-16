@@ -1,0 +1,300 @@
+/* ===================== */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Body and Background */
+body {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    width: 100%;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    color: white;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+header .logo h1 {
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+header nav {
+    display: flex;
+    gap: 15px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 18px;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+header nav a:hover,
+header nav a.active {
+    background-color: white;
+    color: #2575fc;
+    font-weight: bold;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Container / Cards */
+.container, .page-wrapper, .login-container {
+    background: white;
+    color: black;
+    padding: 30px;
+    border-radius: 25px;
+    margin-top: 40px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover, .page-wrapper:hover, .login-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Titles */
+.container h2, .login-container h2, .page-wrapper h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #2575fc;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Input fields */
+input[type="text"], input[type="password"], input[type="email"], select {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: #f9f9f9;
+}
+
+input:focus, select:focus {
+    border-color: #2575fc;
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(37, 117, 252, 0.4);
+    background: #fff;
+}
+
+/* Buttons */
+button, .start-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+}
+
+button:hover, .start-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Links */
+a, .back-link {
+    color: #ff9800;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover, .back-link:hover {
+    text-decoration: underline;
+    color: #e67e22;
+}
+
+/* Tables for results or questions */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    font-size: 16px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 14px;
+    text-align: center;
+    border: 1px solid #ddd;
+    color: black;   
+}
+
+td {
+    color: black;   
+}
+
+th {
+    color: white;  
+}
+
+
+tr:hover {
+    background-color: #f0f8ff;
+    transition: 0.3s;
+}
+
+/* Make all table text black in full-table */
+.full-table td, 
+.full-table th {
+    color: black;
+    font-weight: normal;
+}
+
+/* Delete button */
+.btn-delete {
+    padding: 6px 14px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-delete:hover {
+    background: #c82333;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Responsive */
+@media(max-width:768px) {
+    .container, .page-wrapper, .login-container {
+        width: 95%;
+        padding: 20px;
+    }
+    input, select, button {
+        font-size: 14px;
+        padding: 10px;
+    }
+    table {
+        font-size: 14px;
+    }
+}
+
+@media(max-width:480px) {
+    h2 {
+        font-size: 22px;
+    }
+}
+
+/* Quiz Section */
+.test-section {
+    background: white;
+    color: black;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 40px;
+}
+
+.test-section p, 
+.test-section label {
+    color: black;
+    font-size: 16px;
+}
+
+.test-section input[type="radio"] {
+    margin-right: 8px;
+}
+
+/* Quiz buttons shrink to fit text */
+.test-section button {
+    font-size: 14px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: auto;
+    display: inline-block;
+}
+
+.test-section button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Welcome text */
+.welcome-section {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: black;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+
+/* Edit button */
+.btn-edit {
+    padding: 5px 12px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-edit:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+
+.btn-small { 
+    padding: 5px 10px; 
+    font-size: 12px; 
+    cursor: pointer; 
+}
+
+
+
+
+
+
